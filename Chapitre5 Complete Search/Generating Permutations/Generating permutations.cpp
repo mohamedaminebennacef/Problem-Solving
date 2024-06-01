@@ -7,7 +7,7 @@ std::vector<bool> chosen;     // To track if an element is already chosen
 int n;                        // Size of the set
 // Function to process the permutation (in this case, print it)
 void processPermutation() {
-    std::cout << "{ ";
+    std::cout << "{x ";
     for (int x : permutation) {
         std::cout << x << " ";
     }
