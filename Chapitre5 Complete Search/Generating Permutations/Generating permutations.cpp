@@ -7,7 +7,7 @@ std::vector<bool> chosen;     // To track if an element is already chosen
 int n;                        // Size of the set
 // Function to process the permutation (in this case, print it)
 void processPermutation() {
-    std::cout << "{x ";
+    std::cout << "{";
     for (int x : permutation) {
         std::cout << x << " ";
     }
@@ -30,7 +30,7 @@ void search() {
 }
 int main() {
     // Initialize the size of the set
-    n = 3; // Example: a set with 3 elements {0, 1, 2}
+    n = 4; // Example: a set with 3 elements {0, 1, 2}
     // Initialize the chosen vector with false values
     chosen.assign(n, false);
     // Start the search
