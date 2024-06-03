@@ -30,7 +30,7 @@ void search() {
 }
 int main() {
     // Initialize the size of the set
-    n = 4; // Example: a set with 3 elements {0, 1, 2}
+    n = 6; // Example: a set with 3 elements {0, 1, 2}
     // Initialize the chosen vector with false values
     chosen.assign(n, false);
     // Start the search
