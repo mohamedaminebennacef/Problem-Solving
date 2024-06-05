@@ -1,34 +1,30 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-vector<int> indices(2);
-int n;
-
- vector<int> twoSum(vector<int>& nums, int target) {
-        unordered_map<int,int> numMap; // valuer : indice
-        int complement;
-        for(int i=0;i<=n;i++) {
-            complement = target-nums[i]; 
-            if (numMap.find(complement) != numMap.end()) {
-                indices[0] = numMap[complement];
-                indices[1] = i;
-                return indices;
-            }
-            numMap[nums[i]] = i;
+vector<string> output;
+vector<string> commonChars(vector<string>& words) {
+    for (int i=0;i<words.size();i++) { // iterating over words
+        bool common_ch = true;
+        for(int j=i+1;j<words[i].size();j++) { // iterating over characters
+            common_ch = common_ch and words[j].find(words[i][i]) != npos;
         }
-        return indices;
+        if (common_ch) {
+            output.push_back(words[i][i]);
+        }
+    }
+    return output;
 }
 
 int main() {
-    vector<int> nums = {2,1,5,3};
-    n = nums.size();
-    int target = 4;
-    indices = twoSum(nums,target);
+    vector<string> words = {"bella","label","roller"};
+    output = commonChars(words);
+
     cout << "[";
-    for (auto indice:indices) {
-        cout << indice << " ";
+    for (auto character:output) {
+        cout << character << " ";
     }
     cout << "]";
+
 
     return 0;
 }
