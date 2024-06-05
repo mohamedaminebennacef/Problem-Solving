@@ -1,37 +1,34 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// Function to recursively find subsets
-void rec(vector<int>& arr, int i, vector<int>& subset, vector<vector<int>>& subsets) {
-    if (i == arr.size()) {
-        subsets.push_back(subset);
-    } else {
-        subset.push_back(arr[i]);
-        rec(arr, i + 1, subset, subsets);
-        subset.pop_back();
-        rec(arr, i + 1, subset, subsets);
-    }
-}
+vector<int> indices(2);
+int n;
 
-// Function to get all subsets of an array
-vector<vector<int>> get_subsets(vector<int>& arr) {
-    vector<vector<int>> subsets;
-    vector<int> subset;
-    rec(arr, 0, subset, subsets);
-    return subsets;
+ vector<int> twoSum(vector<int>& nums, int target) {
+        unordered_map<int,int> numMap; // valuer : indice
+        int complement;
+        for(int i=0;i<=n;i++) {
+            complement = target-nums[i]; 
+            if (numMap.find(complement) != numMap.end()) {
+                indices[0] = numMap[complement];
+                indices[1] = i;
+                return indices;
+            }
+            numMap[nums[i]] = i;
+        }
+        return indices;
 }
 
 int main() {
-    vector<int> arr = {1, 2, 3,4}; // Example input
-    vector<vector<int>> subsets = get_subsets(arr);
-
-    // Print all subsets
-    for (const auto& subset : subsets) {
-        for (int num : subset) {
-            cout << num << " ";
-        }
-        cout << endl;
+    vector<int> nums = {2,1,5,3};
+    n = nums.size();
+    int target = 4;
+    indices = twoSum(nums,target);
+    cout << "[";
+    for (auto indice:indices) {
+        cout << indice << " ";
     }
+    cout << "]";
 
     return 0;
 }
