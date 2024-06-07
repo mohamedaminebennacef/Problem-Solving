@@ -21,5 +21,13 @@ int main() {
     cout << q.top() << "\n"; // 6
     q.pop();
 
+    // Access and print the elements in the priority queue
+    // Since it is a min-heap, the smallest element will be on top
+    cout << "printing priority queue element ";
+    while (!q.empty()) {
+        cout << q.top() << " ";
+        q.pop();
+    }
+
     return 0;
 }   
