@@ -11,5 +11,6 @@ int main() {
         cout << topElement.second;
         pq.pop();
     }
+    cout << "test";
     return 0;
 }
