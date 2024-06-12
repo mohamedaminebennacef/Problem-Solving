@@ -1,29 +1,15 @@
 #include <iostream>
-#include <map>
-#include <vector>
-#include <utility> // For std::pair
+#include <string>
 
 int main() {
-    // Define the map: key is an int, value is a vector of pairs of ints
-    std::map<int, std::vector<std::pair<int, int>>> myMap;
+    std::string str = "Hello, World!";
+    // Extract a substring starting from position 7 with length 5
+    std::string sub = str.substr(0, str.find(" "));
+    std::string sub2 = str.substr(str.find(" ")+1, str.size());
 
-    // Insert an empty vector for a key if it doesn't exist
-    int key = 1;
-    if (myMap.find(key) == myMap.end()) {
-        myMap[key] = std::vector<std::pair<int, int>>();
-    }
-
-    // Add a new pair to the vector associated with the key
-    std::pair<int, int> newPair = std::make_pair(10, 20);
-    myMap[key].push_back(newPair);
-
-    // Display the contents of the map
-    for (const auto& entry : myMap) {
-        std::cout << "Key: " << entry.first << "\n";
-        for (const auto& pair : entry.second) {
-            std::cout << "  Pair: (" << pair.first << ", " << pair.second << ")\n";
-        }
-    }
+    std::cout << "Original string: " << str << std::endl;
+    std::cout << "Substring: " << sub << std::endl;
+    std::cout << "Substring: " << sub2 << std::endl;
 
     return 0;
 }
