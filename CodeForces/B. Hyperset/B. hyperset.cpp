@@ -1,39 +1,28 @@
-#include <iostream>
-#include <vector>
-#include <string>
+#include <bits/stdc++.h>
 using namespace std;
- 
+
 int main() {
-    int n, k;
-    cin >> n >> k;
-    vector<string> cards(n);
-    
-    for(int i = 0; i < n; ++i) {
-        cin >> cards[i];
-    }
-    
-    int count = 0;
- 
-    for(int i = 0; i < n; ++i) {
-        for(int j = i + 1; j < n; ++j) {
-            for(int l = j + 1; l < n; ++l) {
-                bool isSet = true;
-                for(int m = 0; m < k; ++m) {
-                    char a = cards[i][m];
-                    char b = cards[j][m];
-                    char c = cards[l][m];
-                    if (!((a == b && b == c) || (a != b && b != c && a != c))) {
-                        isSet = false;
+    // int n=5,k=4,res=0;vector<string> v = {"sett","test","eeet","este","stes"};
+    int n,k,res=0;
+    cin>>n>>k;
+    vector<string> v(n);
+    for(int i=0;i<n;i++) cin>>v[i];
+    for(int i=0;i<n-2;i++){
+        for(int j=i+1;j<n-1;j++){
+            for(int x=j+1;x<n;x++) {
+                bool cut=false;string s1=v[i];string s2=v[j];string s3=v[x];                
+                for(int a=0;a<k;a++){
+                    if ( s1[a]==s2[a] && s1[a]!=s3[a] || s1[a]==s3[a] && s1[a]!=s2[a] || s2[a]==s3[a] && s1[a]!=s2[a] ){
+                        cut=true;
                         break;
                     }
                 }
-                if (isSet) {
-                    ++count;
+                if(!cut) {
+                    res++;
                 }
             }
         }
     }
-    
-    cout << count << endl;
+    cout << res << endl;
     return 0;
 }
