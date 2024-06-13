@@ -2,11 +2,7 @@
 using namespace std;
 
 int main() {
-    // int n=5,k=4,res=0;vector<string> v = {"sett","test","eeet","este","stes"};
-    int n,k,res=0;
-    cin>>n>>k;
-    vector<string> v(n);
-    for(int i=0;i<n;i++) cin>>v[i];
+    int n=5,k=4,res=0;vector<string> v = {"sett","test","eeet","este","stes"};
     for(int i=0;i<n-2;i++){
         for(int j=i+1;j<n-1;j++){
             for(int x=j+1;x<n;x++) {
