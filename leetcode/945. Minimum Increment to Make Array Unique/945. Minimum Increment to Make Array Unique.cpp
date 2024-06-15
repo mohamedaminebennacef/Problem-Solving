@@ -1,74 +1,51 @@
-// #include <bits/stdc++.h>
-// using namespace std;
+#include <bits/stdc++.h>
+using namespace std;
 
-// int get_indice(vector<int> v,int value) {
-//     if (find(v.begin(),v.end(),value) != v.end()) {
-//         return find(v.begin(),v.end(),value)-v.begin();
-//     }
-//     return -1;
-// }
-
-// int main() {
-//     vector<int> nums = {3,2,1,2,1,7};
-//     int n = nums.size();
-//     sort(nums.begin(),nums.end());
-//     for(auto v:nums) cout<<v;
-//     for(int i=0;i<n-1;i++) {
-//         if (nums[i] == nums[i+1]) {
-//             nums
-//         }
-//     }
-    
 
 class Solution {
 public:
-    int minIncrementForUnique(vector<int>& nums) {
+    int minIncrementForUniqueSolution1(vector<int> nums) {
+        int n = nums.size();
         sort(nums.begin(),nums.end());
-        int ans = 0;
-        for(int i=1;i<nums.size();i++){
-            if(nums[i]<=nums[i-1]){
-                ans += nums[i-1]-nums[i]+1;
-                nums[i]= nums[i-1]+1;
+        int res=0;
+        for(int i=1;i<n;i++) {
+            if (nums[i-1] >= nums[i]) {
+                res=res+1+nums[i-1]-nums[i];
+                nums[i] = nums[i-1]+1;
+            } 
+        }
+        return res;
+    }
+    int minIncrementForUniqueSolution2(vector<int>& nums) {
+        // Create a vector to count the occurrences of each number
+        vector<int> count(*max_element(nums.begin(), nums.end()) + nums.size() + 1, 0);
+        // Count the occurrences of each number in the input array
+        for(auto &num : nums) {
+            count[num]++;
+        }
+        int n = count.size();
+        int moves = 0;
+        int i = 0;
+        // Traverse the count vector to make each number unique
+        while (n > 0) {
+            if (count[i] >= 2) {
+                // If the count of the current number is 2 or more, increment the next number
+                moves += count[i] - 1;
+                count[i + 1] += count[i] - 1;
             }
+            i++;
+            n--;
         }
-        return ans;
-        }
+        return moves;
+    }
 };
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    // map<int,int> freq;
-    // for(int i=0;i<n;i++){
-    //     if (freq.find(nums[i]) != freq.end())
-    //         freq[nums[i]]++;
-    //     else
-    //         freq[nums[i]]=1;
-    // }
-    // for(map<int,int>::iterator it=freq.begin();it!=freq.end();++it) {
-    //     if(it->second>1) {
-    //         int indice = get_indice(nums,it->first);
-    //         while () {
-    //             nums[indice]++;
-    //             it->second--;
-    //         }
-    //     }
-    // }
+// tc->O(max_num+n), here n is size of the nums vector
+// sc->O(max_num+n)
+
+int main() {
+    vector<int> nums = {100000,100000,100000};
+    Solution solution;
+    cout<<solution.minIncrementForUniqueSolution1(nums)<<"\n";
+    cout<<solution.minIncrementForUniqueSolution2(nums)<<"\n";
     return 0;
 }
