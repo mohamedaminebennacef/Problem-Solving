@@ -1,32 +1,35 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-const int N = 1e5+10;
-int a[N];
-int main(){
-    int t;
-    cin>>t;
-    while(t--){
-        int n;
-        cin>>n;
-        for(int i=1;i<=n;i++){
-            cin>>a[i];
-        }
-        int pos=0;
-        for(int i=1;i<n;i++){
-            if(a[i]>a[i+1]){
-                pos=i;
-                break;
-            }
-        }
-        if(!pos)cout<<"Yes\n";
-        else{
-            int fl=0;
-            for(int i=pos+1;i<=n;i++){
-                int j=(i%n)+1;
-                if(a[i]>a[j])fl=1;
-            }
-            if(!fl)cout<<"Yes\n";
-            else cout<<"No\n";
-        }
+typedef long long ll;
+
+bool isSorted(vector<int> &vec) {
+    if (vec.size()<2)
+        return true;
+    for(size_t i=0;i<vec.size()-1;i++){
+        if (vec[i]>vec[i+1])
+            return false;
     }
+    return true;
+}
+void rotation(vector<int>& vec,int k) {
+    int n=vec.size();
+    k = k%n ;// handle cases where k>n
+    if (k<0)
+        k +=n;
+    vector<int> temp(vec.begin()+n-k,vec.end());
+    vec.erase(vec.begin()+n-k,vec.end());
+    vec.insert(vec.begin(),temp.begin(),temp.end());
+}
+int main() {    
+    vector<int> a = {7,9,2,2,3};
+    int n=5;
+    bool ok=false;
+    for(int i=0;i<n;i++) {
+        ok |= is_sorted(a.begin(),a.end()); // if the vector is found to be sorted in any rotation
+        rotate(a.begin(),a.begin()+1,a.end()); // rotates the vector a by 1 position to the left.
+        // ok |= isSorted(a);
+        // rotation(a,1);
+    }
+    cout<<(ok ? "YES" : "NO")<<"\n";
+    return 0;
 }
