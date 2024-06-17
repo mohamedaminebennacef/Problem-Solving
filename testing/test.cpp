@@ -131,14 +131,20 @@ void asquare()
 //Main
 int main()
 {
-    Code By Asquare
-    // asquare();
-    ll t;
-    cin>>t;
-    fl(i,t)
-    {
-        asquare();
-    }
-    return 0;
+    // Code By Asquare
+    // // asquare();
+    // ll t;
+    // cin>>t;
+    // fl(i,t)
+    // {
+    //     asquare();
+    // }
+    // return 0;
+  int x=56;
+  for (int i = 31; i >= 0; i--) {
+    if (x&(1<<i)) cout << "1";
+    else cout << "0";
+  }
+
 }
 //End
