@@ -2,6 +2,9 @@
 using namespace std;
 const int modulo = 1e9 + 7;
 int t, n, k;
+
+// modular exponentiation
+
 long long mod_exp(long long base, long long exp, long long mod) {
     long long result = 1;
     while (exp > 0) {
@@ -11,7 +14,7 @@ long long mod_exp(long long base, long long exp, long long mod) {
         base = (base * base) % mod;
         exp /= 2;
     }
-    return result;
+    return result; // base^exp mod mod using the method known as "exponentiation by squaring" 
 }
 
 int main() {
