@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+// top = min,max element
 // called min heap or max heap
 // nsta3mloha ki nst7a9ou bch nfas5ou akber wela as5ar element(mech mel wost) 
 // retrieval and removal of either the minimum or maximum element. the largest element can be accessed and removed first.

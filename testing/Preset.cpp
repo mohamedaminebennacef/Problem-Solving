@@ -13,3 +13,15 @@ int main() {
     //cout<<ans<<endl; 
     return 0;
 }
+#include <bits/stdc++.h>
+using namespace std;
+int n;
+int main() {
+    freopen("input.txt","r",stdin);
+    cin>>n;
+    vector<int> v(n);
+    for(int i=0;i<n;i++) cin>>v[i];
+       
+    //cout<<ans<<endl; 
+    return 0;
+}
