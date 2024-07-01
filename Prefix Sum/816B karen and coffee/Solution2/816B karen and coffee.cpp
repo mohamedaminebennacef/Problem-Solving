@@ -1,45 +1,36 @@
 #include <bits/stdc++.h>
 using namespace std;
 const int N=2*1e5+7;
-int n,k,q,l,r;
+int n,k,q,a,b;
+int tab[N],gtk[N];
 int main() {
     freopen("../input.txt","r",stdin);
     cin>>n>>k>>q;
-    vector<pair<int,int>> recipes;
-    vector<pair<int,int>> questions;
-    for(int i=0;i<n;i++) {
-        cin>>l>>r;
-        recipes.push_back({l,r});
+    memset(tab,0,sizeof tab);
+    memset(gtk,0,sizeof gtk);
+    // 1 we fill a table with all the ranges
+    for(int i=0;i<n;i++){
+        cin>>a>>b;
+        tab[a]++;
+        tab[b+1]--;
     }
-    for(int i=0;i<q;i++) {
-        cin>>l>>r;
-        questions.push_back({l,r});
+    for(int i=0;i<=N;i++) {
+        tab[i]+=tab[i-1];// 2 cumulative sum
+        if (tab[i]>=k)
+            gtk[i]++;
     }
-    // looping over questions
-    for(int i=0;i<q;i++){
-        int ans=0;
-        // looping over every question intervalle
-        for(int j=questions[i].first;j<=questions[i].second;j++) {
-            int c=0;
-            int nb=0;
-            // looping over every recipes
-            for(int c=0;c<n;c++) {
-                if (recipes[c].first<=j && j<=recipes[c].second) {
-                    nb++;
-                    if(nb>=k) {
-                        ans++;
-                        break;
-                    }
-                }
-            }
-        }
-        cout<<ans<<"\n";   
-    }        
+    for(int i=0;i<=N;i++) {
+        gtk[i]+=gtk[i-1];
+    }
+    while(q--) {
+        cin>>a>>b;
+        cout<<gtk[b]-gtk[a-1]<<"\n";
+    }
     /*
     3
     3
     0
     4
-*/
+    */
     return 0;
-}
+}   

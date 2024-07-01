@@ -23,10 +23,10 @@ int main() {
         for(int c=intervals[j].first;c<=intervals[j].second;c++) { // parcours of every interval [d,f]
             occ[c]++;
         }
-        // for(int x=1;x<=8;x++)
-        //     cout<<occ[x]<<" ";
-        // cout<<"\n";
     }
+    for(int x=1;x<=8;x++)
+        cout<<occ[x]<<" ";
+    cout<<"\n";
     
     // Optimised solution using cumulative sum
     // O(n+q)
@@ -37,8 +37,11 @@ int main() {
         if (intervals[i].second<=8)
             occ[intervals[i].second+1] += -1;
     }
+    for(int i=1;i<=8;i++)
+        occ[i]+=occ[i-1];
     for(int x=1;x<=8;x++)
         cout<<occ[x]<<" ";
     cout<<"\n";
+
     return 0;
 }

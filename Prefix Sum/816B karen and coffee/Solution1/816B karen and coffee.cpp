@@ -15,6 +15,7 @@ int main() {
         cin>>l>>r;
         questions.push_back({l,r});
     }
+    // Basic Brute force Approach
     // looping over questions
     for(int i=0;i<q;i++){
         int ans=0;
