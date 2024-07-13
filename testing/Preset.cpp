@@ -1,4 +1,6 @@
 #include <bits/stdc++.h>
+#define FAST ios_base::sync_with_stdio(false):cin.tie(NULL):cout.tie(NULL);
+#define newL cout<<"\n";
 using namespace std;
 int t,n;
 int main() {
