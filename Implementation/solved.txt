@@ -1,4 +1,5 @@
-A. ABC              implementation                                             *800        
-A. Immobile Knight  implementation                                             *800  
-A. 2-3 Moves        greedy math                                                *800
-A. Only Pluses      brute force constructive algorithms greedy math sortings   *800
+A. ABC                implementation                                             *800        
+A. Immobile Knight    implementation                                             *800  
+A. 2-3 Moves          greedy math                                                *800
+A. Only Pluses        brute force constructive algorithms greedy math sortings   *800
+D. Manhattan Circle   implementation math                                        *900
