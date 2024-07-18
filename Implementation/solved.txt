@@ -4,3 +4,4 @@ A. 2-3 Moves           greedy math                                              
 A. Only Pluses         brute force constructive algorithms greedy math sortings               *800
 D. Manhattan Circle    implementation math                                                    *900
 B. Queue at the School constructive algorithms graph matchings implementation shortest paths  *800
+A. Beautiful Matrix    implementation                                                         *800
