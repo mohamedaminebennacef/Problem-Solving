@@ -1,16 +1,14 @@
 #include <bits/stdc++.h>
 using namespace std;
-void solve() {
-    freopen("input.txt","r",stdin); 
-    
-}
+
 
 signed main() {
   ios_base::sync_with_stdio(false); cin.tie(NULL);
+  freopen("input.txt","r",stdin);
   int T=1;
   cin >> T;
   while (T--) {
-    solve();
+  
   }
 }
 
