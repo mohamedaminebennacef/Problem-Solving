@@ -6,3 +6,4 @@ D. Manhattan Circle    implementation math                                      
 B. Queue at the School constructive algorithms graph matchings implementation shortest paths  *800
 A. Beautiful Matrix    implementation                                                         *800
 B. Queue at the School constructive algorithms graph matchings implementation shortest paths  *800
+A. Maximum in Table    brute force implementation                                             *800
