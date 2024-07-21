@@ -10,3 +10,4 @@ A. Maximum in Table    brute force implementation                               
 A. Petya and Strings   implementation strings                                                 *800
 C. Clock and Strings   implementation                                                         *900
 A. Submission Bait	   brute force games greedy sortings
+C. Clock Conversion    implementation math                                                    *800                        
