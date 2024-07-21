@@ -6,10 +6,37 @@ signed main() {
   ios_base::sync_with_stdio(false); cin.tie(NULL);
   freopen("input.txt","r",stdin);
   int T=1;cin >> T;
+  int a,b,c,d;
   while (T--) {
-  
+    cin>>a>>b>>c>>d;
+    int b1=min(a,b);
+    int b2=max(a,b);
+    int b3=min(c,d);
+    int b4=max(c,d);
+    if(b2>=b3 && b2<=b4 && b3>=b1 && b3<=b2 || ( b1>=b3 && b1<=b4 && b4>=b1 && b4<=b2 ))
+      cout<<"YES\n";
+    else 
+      cout<<"NO"<<endl;
   }
 }
+
+// YES
+// NO
+// NO
+// YES
+// YES
+// NO
+// NO
+// NO
+// NO
+// NO
+// NO
+// YES
+// YES
+// YES
+// YES
+
+
 
 
 /*
