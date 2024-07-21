@@ -8,3 +8,5 @@ A. Beautiful Matrix    implementation                                           
 B. Queue at the School constructive algorithms graph matchings implementation shortest paths  *800
 A. Maximum in Table    brute force implementation                                             *800
 A. Petya and Strings   implementation strings                                                 *800
+C. Clock and Strings   implementation                                                         *900
+A. Submission Bait	   brute force games greedy sortings
