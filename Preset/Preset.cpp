@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+int k,n,u,p,i,j,h,z,e,q,w,l,x,y,r;
+#define all(x) (x).begin(), (x).end()
+#define allr(x) (x).rbegin(), (x).rend()
 
 void solve() {
 }

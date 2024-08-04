@@ -11,4 +11,4 @@ A. Petya and Strings   implementation strings                                   
 C. Clock and Strings   implementation                                                         *900
 A. Submission Bait	   brute force games greedy sortings
 C. Clock Conversion    implementation math                                                    *800 
-B. Upscaling          implementation                                                         *800                       
+B. Upscaling          implementation                                                          *800                       
