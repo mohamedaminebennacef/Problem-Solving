@@ -1,57 +1,60 @@
 #include <bits/stdc++.h>
 using namespace std;
-void solve() {
-    freopen("input.txt","r",stdin);
-    ios::sync_with_stdio(0), cin.tie(0);
-    int t;cin>>t;
-    while(t--) {
-        int n;cin>>n;
-        vector<int> a(n);
-        bool test=true;
-        for(int i=0;i<n;i++) {
-            cin>>a[i];
-            if (a[i]%2!=a[0]%2) 
-                test=false;
-        }
-        if (test)
-            cout<<0<<endl;
-        else {
-            sort(a.begin(),a.end());
-            int indimpair=0;
-            for(int i=a.size()-1;i>=0;i--) {
-                if (a[i]%2==1) {
-                    indimpair=i;
+class Solution {
+public:
+    int maxOperations(vector<int>& nums, int k) {
+        int ans=0;
+		int i=0,j=0;
+		while (i<nums.size()-1 && !nums.empty()) {
+			while (j<nums.size() && !nums.empty())
+			{
+                if (nums[i]+nums[j]==k) {
+                    ans++;
+                    nums.erase(nums.begin()+j);
+                    nums.erase(nums.begin()+i);
+					break;
+                }
+				j++;
+			}
+			i++;	
+		}
+        return ans;
+    }
+};	
+
+int main() {
+	Solution solution;
+	vector<int> nums = {1,2,3,4};int k = 5;
+	cout<<solution.maxOperations(nums,k);
+}
+
+/*
+#include <bits/stdc++.h>
+using namespace std;
+
+class Solution {
+    public:
+    int maxOperations(int* nums,int n, int k) {
+        int count = 0;
+        for(int i = 0; i < n; i++){
+            if(nums[i] == -1) continue;
+            for(int j = i + 1; j < n; j++){
+                if(nums[j] == -1) continue;
+                if(nums[i] + nums[j] == k){
+                    count++;
+                    nums[i] = -1;
+                    nums[j] = -1;
                     break;
                 }
             }
-            int ans=0;
-            int i=a.size()-1;
-            while(i>=0) {
-                if (a[i]%2==0) {
-                    if (a[i]<a[indimpair]) {
-                        a[i]+=a[indimpair];
-                        indimpair=i;
-                        ans++;
-                        i--;
-                    }
-                    else {
-                        a[indimpair]+=a[i];
-                    }
-                }
-                else 
-                    i--;
-            }
-            cout<<ans+1<<endl;
         }
+        return count;
     }
-}    
-int main() {solve();}
-/*
-0
-0
-2
-4
-3
-3
-3
+};
+int main() {
+	Solution solution;
+	int nums[] = {1,2,3,4};int k = 5;
+    int n=sizeof(nums)/sizeof(nums[0]);
+	cout<<solution.maxOperations(nums,n,k);
+}
 */

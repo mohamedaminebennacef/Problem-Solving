@@ -2,24 +2,21 @@
 using namespace std;
 void solve() {
     freopen("input.txt","r",stdin);
-    int t;cin>>t;
-    while(t--) {
-
+    int n,k;cin>>n>>k;
+    vector<int> v;
+    for(int i=1;i<=n;i++)
+        v.push_back(i);
+    if (k==0) {
+        for(int i=0;i<n-k-1;i++)
+            cout<<v[i]<<" ";
     }
-}    
-void main() {solve();}
-/*
-6
-1 0
-5 0
-1 2
-3 2
-1 2
-4 5
-1 2
-4 3
-1 2
-1 2
-998244353 0
-1000000000 999999999
-*/
+    else {
+        for(int i=0;i<k;i++) {
+            cout<<v[i]<<" ";
+        }
+        for(int i=0;i<n-k;i++) {
+            cout<<v[n-i-1]<<" ";
+        }
+    }
+}
+int main() {solve();}
