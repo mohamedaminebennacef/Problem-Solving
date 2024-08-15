@@ -1,60 +1,48 @@
-#include <bits/stdc++.h>
+#include "bits/stdc++.h"
+
+#define all(a) a.begin(), a.end()
+#define pb push_back
+typedef long long ll;
 using namespace std;
-class Solution {
-public:
-    int maxOperations(vector<int>& nums, int k) {
-        int ans=0;
-		int i=0,j=0;
-		while (i<nums.size()-1 && !nums.empty()) {
-			while (j<nums.size() && !nums.empty())
-			{
-                if (nums[i]+nums[j]==k) {
-                    ans++;
-                    nums.erase(nums.begin()+j);
-                    nums.erase(nums.begin()+i);
-					break;
+ 
+/// Actual code starts here
+const int N = 100005;
+ 
+void solve() {
+    ll x;
+    cin >> x;
+    vector<int> res(31, 0);
+    for (int i = 0; i < 30; i++) {
+        if (1ll & (x >> i)) {
+            if (res[i]) {
+                res[i + 1] = 1;
+                res[i] = 0;
+            } else if (i > 0) {
+                if (res[i - 1] == 1) {
+                    res[i + 1] = 1;
+                    res[i - 1] = -1;
+                } else {
+                    res[i] = 1;
                 }
-				j++;
-			}
-			i++;	
-		}
-        return ans;
-    }
-};	
-
-int main() {
-	Solution solution;
-	vector<int> nums = {1,2,3,4};int k = 5;
-	cout<<solution.maxOperations(nums,k);
-}
-
-/*
-#include <bits/stdc++.h>
-using namespace std;
-
-class Solution {
-    public:
-    int maxOperations(int* nums,int n, int k) {
-        int count = 0;
-        for(int i = 0; i < n; i++){
-            if(nums[i] == -1) continue;
-            for(int j = i + 1; j < n; j++){
-                if(nums[j] == -1) continue;
-                if(nums[i] + nums[j] == k){
-                    count++;
-                    nums[i] = -1;
-                    nums[j] = -1;
-                    break;
-                }
+            } else if (i == 0) {
+                res[i] = 1;
             }
         }
-        return count;
     }
-};
-int main() {
-	Solution solution;
-	int nums[] = {1,2,3,4};int k = 5;
-    int n=sizeof(nums)/sizeof(nums[0]);
-	cout<<solution.maxOperations(nums,n,k);
+    cout << 31 << '\n';
+    for (int i = 0; i <= 30; i++) {
+        cout << res[i] << ' ';
+    }
+    cout << '\n';
 }
-*/
+ 
+signed main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+	freopen("input.txt","r",stdin);
+    int tt = 1;
+    cin >> tt;
+    while (tt--)
+        solve();
+}
