@@ -1,11 +1,11 @@
 #include <iostream>
-
 #include <unordered_map>
-
+#define f first
+#define s second
 using namespace std;
 
 int main() {
-  unordered_map<string, int> umap; 
+  unordered_map<string, int> umap; // hash table
   
   // inserting values by using [] operator 
   umap["GeeksforGeeks"] = 10; 
@@ -13,9 +13,8 @@ int main() {
   umap["Contribute"] = 30; 
   
   // Traversing an unordered map 
-  for (auto x : umap) 
-    cout << x.first << " " <<  
-            x.second << endl;   
-
+  for (auto x : umap) cout << x.f << " " << x.s << endl;   
+  if (umap.find("Practice")!=umap.end())
+    cout<<umap["Practice"];
   return 0;
 }
