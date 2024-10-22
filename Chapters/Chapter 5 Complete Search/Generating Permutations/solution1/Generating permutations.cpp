@@ -18,7 +18,7 @@ void search() {
     if (permutation.size() == n) {
         processPermutation(); // Process the permutation when its size is n
     } else {
-        for (int i = 0; i < n; i++) {
+        for (int i = 1; i <= n; i++) {
             if (chosen[i]) continue;
             chosen[i] = true;
             permutation.push_back(i);
@@ -30,7 +30,7 @@ void search() {
 }
 int main() {
     // Initialize the size of the set
-    n = 6; // Example: a set with 3 elements {0, 1, 2}
+    n = 4; // Example: a set with 3 elements {0, 1, 2}
     // Initialize the chosen vector with false values
     chosen.assign(n, false);
     // Start the search

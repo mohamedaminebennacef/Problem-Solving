@@ -1,37 +1,25 @@
-#include "bits/stdc++.h"
+#include <bits/stdc++.h>
 using namespace std;
- 
-void solve() {
-    freopen("input.txt","r",stdin);
-    int t;cin>>t;
-    while(t--) {
-        int n,k;cin>>n>>k;
-        vector<int> a(n);
-        for(auto& i:a) cin>>i;
-        sort(a.begin(),a.end(),greater<int>());
-        long long A=0,B=0,score=0;
-        for(int i=0;i<n-1;i++) {
-            if (k!=0) {
-                if (a[i]-a[i+1]>=0) {
-                    int x=a[i+1];
-                    a[i+1]+=min(k,a[i]-a[i+1]);
-                    k-=min(k,a[i]-x);
-                    i++;
-                }
+class Solution {
+public:
+    int longestSubarray(vector<int>& nums) {
+        int l=0,r=0,ws=0,n=nums.size(),zero=0;
+        while (r<n) {
+            if (nums[r]==0)
+                zero++;
+            while (zero>1) {
+                if (nums[l]==0)
+                    zero--;
+                l++;
             }
-            else {
-                break;
-            } 
+            ws=max(ws,r-l+1-zero);
+            r++;
         }
-        for(int i=0;i<n;i++) {
-            if (i%2==0)
-                A+=a[i];
-            else
-                B+=a[i]; 
-        }
-        score=A-B;
-        cout<<score<<endl;
+        return ws;
     }
+};
+int main() {
+    Solution solution;
+    vector<int> nums={1,1,0,1};
+    cout<<solution.longestSubarray(nums);
 }
- 
-signed main() {solve();}

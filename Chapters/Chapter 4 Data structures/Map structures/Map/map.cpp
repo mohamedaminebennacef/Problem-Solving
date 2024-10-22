@@ -2,7 +2,7 @@
 using namespace std;
 
 /*
-elements are sorted (ordered)
+elements are sorted selon key (ordered)
 no duplicate key No two mapped values can have the same key
 */
 
@@ -22,24 +22,3 @@ int main()  {
 
     return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-
-Order: Maintains elements in a sorted order according to the keys.
-
-
-*/

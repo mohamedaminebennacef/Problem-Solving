@@ -8,6 +8,7 @@ using namespace std;
 // FIFO
 // adding an element to the end 
 // removing the first element in the queue. 
+// By default, a priority queue in C++ is a max-heap, meaning the largest element is at the top. However, by using greater<int>, you're changing the priority queue to a min-heap, meaning the smallest element will be at the top
 int main() {
     priority_queue<int> q;
     q.push(3);

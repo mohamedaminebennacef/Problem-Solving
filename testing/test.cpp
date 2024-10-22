@@ -1,22 +1,36 @@
 #include <bits/stdc++.h>
 using namespace std;
-void solve() {
-    freopen("input.txt","r",stdin);
-    int n,k;cin>>n>>k;
-    vector<int> v;
-    for(int i=1;i<=n;i++)
-        v.push_back(i);
-    if (k==0) {
-        for(int i=0;i<n-k-1;i++)
-            cout<<v[i]<<" ";
-    }
-    else {
-        for(int i=0;i<k;i++) {
-            cout<<v[i]<<" ";
+
+int main() {
+	freopen("input.txt","r",stdin);
+	ios::sync_with_stdio(false); cin.tie(0); cout.tie(0);
+	int t;cin >> t;
+    while(t--) {
+        int n;cin>>n;
+        vector<int> w(n);
+        for(auto&i:w) cin>>i;
+        int i=0,j=n-1,a=w[0],b=w[n-1],ans;
+        if (n>1) {
+            ans=(a!=b?0:2);
+        }      
+        ans=0;  
+        while(i<j) {
+            if (a<b) {
+                i++;
+                a+=w[i];
+            } 
+            else if(a>b) {
+                j--;
+                b+=w[j];
+            }
+            else {
+                ans=i+1+n-j;
+                i++;
+                j--;
+                a+=w[i];
+                b+=w[j];
+            }            
         }
-        for(int i=0;i<n-k;i++) {
-            cout<<v[n-i-1]<<" ";
-        }
+        cout<<ans<<endl;
     }
 }
-int main() {solve();}
