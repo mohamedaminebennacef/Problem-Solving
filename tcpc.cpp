@@ -3,9 +3,12 @@ using namespace std;
 
 #define pb push_back
 #define all(a) a.begin(), a.end()
-#define f first
-#define s second
+#define F first
+#define S second
+#define em emplace_back
+#define mp make_pair
 #define sz(a) (int)(a.size())
+#define int long long
 
 void solve()
 {
