@@ -14,7 +14,7 @@ void solve()
 {
 }
 
-int main()
+signed main()
 {
 #ifndef ONLINE_JUDGE
     freopen("input.txt", "r", stdin);
@@ -25,4 +25,5 @@ int main()
     cin >> t;
     while (t--)
         solve();
+    return 0;
 }
