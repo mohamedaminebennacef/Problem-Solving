@@ -8,7 +8,7 @@ using namespace std;
 #define em emplace_back
 #define mp make_pair
 #define sz(a) (int)(a.size())
-#define int long long
+#define rall(x) (x).rbegin(), (x).rend()
 
 void solve()
 {
