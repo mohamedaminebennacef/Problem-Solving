@@ -10,9 +10,7 @@ using namespace std;
 #define sz(a) (int)(a.size())
 #define rall(x) (x).rbegin(), (x).rend()
 
-void solve()
-{
-}
+bool multi = true;
 
 signed main()
 {
@@ -21,9 +19,11 @@ signed main()
 // freopen("output.txt", "w", stdout);
 #endif
 
-    int t;
-    cin >> t;
-    while (t--)
-        solve();
+    int t = 1;
+    if (multi)
+        cin >> t;
+    for (int i = 1; i <= t; ++i)
+    {
+    }
     return 0;
 }
