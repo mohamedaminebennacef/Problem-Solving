@@ -95,6 +95,8 @@
         "xutility": "cpp",
         "string_view": "cpp",
         "coroutine": "cpp",
-        "resumable": "cpp"
+        "resumable": "cpp",
+        "span": "cpp",
+        "stacktrace": "cpp"
     }
 }
