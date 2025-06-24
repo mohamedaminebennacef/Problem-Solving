@@ -25,7 +25,7 @@ signed main()
     int t = 1;
     if (multi)
         cin >> t;
-    for (int i = 1; i <= t; ++i)
+    while (t--)
     {
     }
     return 0;
