@@ -9,6 +9,9 @@ using namespace std;
 #define mp make_pair
 #define sz(a) (int)(a.size())
 #define rall(x) (x).rbegin(), (x).rend()
+using ll = long long;
+#define endl "\n"
+int a[500005];
 
 bool multi = true;
 
