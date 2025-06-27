@@ -8,6 +8,7 @@
       "program": "${fileDirname}/${fileBasenameNoExtension}.out",
       "args": [],
       "stopAtEntry": false,
+      "miDebuggerPath": "/usr/bin/gdb",
       "cwd": "${fileDirname}",
       "environment": [],
       "externalConsole": false,
