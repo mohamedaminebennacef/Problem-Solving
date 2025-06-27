@@ -97,6 +97,7 @@
         "coroutine": "cpp",
         "resumable": "cpp",
         "span": "cpp",
-        "stacktrace": "cpp"
+        "stacktrace": "cpp",
+        "ranges": "cpp"
     }
 }
