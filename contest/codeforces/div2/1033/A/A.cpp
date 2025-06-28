@@ -26,7 +26,6 @@ signed main()
     {
         int l1, b1, l2, b2, l3, b3;
         cin >> l1 >> b1 >> l2 >> b2 >> l3 >> b3;
-
         // horizantal arrangement for the three 3 rectangle
         if (l1 + l2 + l3 == b1 && b1 == b2 && b2 == b3)
             cout << "YES\n";
@@ -35,7 +34,7 @@ signed main()
             cout << "YES\n";
         else if (l1 == l2 + l3 && l1 == b1 + b2 && b3 == b2 && b2 == b1)
             cout << "YES\n";
-        else if (l1 + l2 == b1 && b1 == b2 + b3)
+        else if ( (l1 == l2 + l3 && l1 == b1 + b2) || (l1 == l2 + l3 && b1 == b2 + b3 && l1 == b1) || (b1 == b2 + b3 && l1 + l2 == b1 && l2 == l3))
             cout << "YES\n";
         else
             cout << "NO\n";
