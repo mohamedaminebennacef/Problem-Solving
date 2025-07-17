@@ -1,0 +1,3 @@
+1. strategy when you don't have an answer assume the answer exist and try to simplify the problem constraints 
+2. if going forward is not making sense can you come back and try to make sense
+3. Is there something that repeats or can be precomputed
