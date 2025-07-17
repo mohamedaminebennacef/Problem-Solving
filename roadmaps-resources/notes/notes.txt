@@ -1,3 +1,5 @@
 1. strategy when you don't have an answer assume the answer exist and try to simplify the problem constraints 
 2. if going forward is not making sense can you come back and try to make sense
 3. Is there something that repeats or can be precomputed
+4. thinking about the question in abstract manner and use the examples only to verify the trivial things  
+5. we want to solve problem with easiest fastest shortest code.                  
